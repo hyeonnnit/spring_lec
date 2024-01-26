@@ -16,6 +16,9 @@ public class UserController {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
         String email = req.getParameter("email");
-
+        System.out.println("username: "+username);
+        System.out.println("password: "+password);
+        System.out.println("email: "+email);
+        return "main";
     }
 }
