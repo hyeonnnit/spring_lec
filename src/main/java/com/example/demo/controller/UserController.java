@@ -11,14 +11,24 @@ public class UserController {
     public String joinForm(){
         return "joinForm";
     }
+//    @PostMapping("/join")
+//    public String join(HttpServletRequest req){
+//        String username = req.getParameter("username");
+//        String password = req.getParameter("password");
+//        String email = req.getParameter("email");
+//        System.out.println("username: "+username);
+//        System.out.println("password: "+password);
+//        System.out.println("email: "+email);
+//        return "main";
+//    }
     @PostMapping("/join")
-    public String join(HttpServletRequest req){
-        String username = req.getParameter("username");
-        String password = req.getParameter("password");
-        String email = req.getParameter("email");
+    public String join(String username, String password, String email){
         System.out.println("username: "+username);
         System.out.println("password: "+password);
         System.out.println("email: "+email);
-        return "main";
+        if (username.length()>10){
+            return "error-404";
+        }
+        return "redirect:/main";
     }
 }
